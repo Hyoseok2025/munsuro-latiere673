@@ -5,6 +5,12 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>문수로 라티에르 673 | 공식 관심고객 등록</title>
   
+  <!-- 프리미엄 한글/영문 폰트 CDN: Pretendard & Cinzel -->
+  <link rel="stylesheet" as="style" crossorigin href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.min.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@600;700;800;900&display=swap" rel="stylesheet">
+
   <!-- Tailwind CSS CDN -->
   <script src="https://cdn.tailwindcss.com"></script>
   <!-- FontAwesome CDN -->
@@ -34,6 +40,47 @@
   </script>
 
   <style>
+    /* 기본 바디 및 폰트 설정 */
+    body {
+      font-family: 'Pretendard', -apple-system, BlinkMacSystemFont, system-ui, Roboto, sans-serif;
+      letter-spacing: -0.02em;
+    }
+
+    .font-brand-en {
+      font-family: 'Cinzel', serif;
+      letter-spacing: 0.08em;
+    }
+
+    /* 상단 네비게이션 전용 고급 스타일 */
+    .nav-item {
+      font-family: 'Pretendard', sans-serif;
+      font-weight: 500;
+      letter-spacing: -0.01em;
+      white-space: nowrap; /* 글자 줄바꿈 꺾임 방지 */
+      position: relative;
+      transition: all 0.25s ease;
+    }
+
+    .nav-item::after {
+      content: '';
+      position: absolute;
+      bottom: -6px;
+      left: 50%;
+      width: 0;
+      height: 2px;
+      background: linear-gradient(90deg, #D4AF37, #F3E5AB);
+      transition: all 0.25s ease;
+      transform: translateX(-50%);
+    }
+
+    .nav-item:hover {
+      color: #F3E5AB;
+    }
+
+    .nav-item:hover::after {
+      width: 100%;
+    }
+
     .gold-gradient-text {
       background: linear-gradient(135deg, #FFF1C5 0%, #D4AF37 50%, #AA820A 100%);
       -webkit-background-clip: text;
@@ -74,22 +121,23 @@
 <body class="bg-[#07090D] text-gray-200 selection:bg-[#D4AF37] selection:text-black relative">
 
   <!-- 상단 네비게이션 헤더 -->
-  <header class="fixed top-0 left-0 right-0 z-40 bg-[#07090D]/90 backdrop-blur-md border-b border-[#2A241A]">
+  <header class="fixed top-0 left-0 right-0 z-40 bg-[#07090D]/95 backdrop-blur-md border-b border-[#2A241A]">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
       <a href="#" class="flex flex-col">
-        <span class="text-xl sm:text-2xl font-black tracking-widest gold-gradient-text">MUNSURO LATIÈRE 673</span>
+        <span class="text-xl sm:text-2xl font-black tracking-widest gold-gradient-text font-brand-en">MUNSURO LATIÈRE 673</span>
         <span class="text-xs text-[#F3E5AB]/70 tracking-wider">문수로 라티에르 673</span>
       </a>
 
-      <nav class="hidden lg:flex items-center space-x-7 text-sm font-medium tracking-wide">
-        <a href="#brand" class="hover:text-[#D4AF37] transition-colors">브랜드 스토리</a>
-        <a href="#summary" class="hover:text-[#D4AF37] transition-colors">사업개요</a>
-        <a href="#location" class="hover:text-[#D4AF37] transition-colors">입지환경</a>
-        <a href="#complex" class="hover:text-[#D4AF37] transition-colors">단지&조망특화</a>
-        <a href="#system" class="hover:text-[#D4AF37] transition-colors">스마트시스템</a>
-        <a href="#floorplan" class="hover:text-[#D4AF37] transition-colors">평면안내</a>
-        <a href="#premium" class="hover:text-[#D4AF37] transition-colors">프리미엄 7</a>
-        <a href="#info-locations" class="hover:text-[#D4AF37] transition-colors">오시는 길</a>
+      <!-- 데스크톱 네비게이션 메뉴 (줄바꿈 방지 및 폰트 개선) -->
+      <nav class="hidden xl:flex items-center space-x-6 text-[15px] tracking-tight">
+        <a href="#brand" class="nav-item text-gray-300">브랜드 스토리</a>
+        <a href="#summary" class="nav-item text-gray-300">사업개요</a>
+        <a href="#location" class="nav-item text-gray-300">입지환경</a>
+        <a href="#complex" class="nav-item text-gray-300">단지&조망특화</a>
+        <a href="#system" class="nav-item text-gray-300">스마트시스템</a>
+        <a href="#floorplan" class="nav-item text-gray-300">평면안내</a>
+        <a href="#premium" class="nav-item text-gray-300">프리미엄 7</a>
+        <a href="#info-locations" class="nav-item text-gray-300">오시는 길</a>
       </nav>
 
       <div class="hidden sm:flex items-center space-x-4">
@@ -97,18 +145,18 @@
           <i class="fa-solid fa-phone text-sm"></i>
           <span>010-5031-0330</span>
         </a>
-        <a href="#reservation" class="px-5 py-2.5 rounded-full bg-gradient-to-r from-[#D4AF37] to-[#997D25] text-black font-bold text-xs tracking-wider uppercase hover:shadow-[0_0_20px_rgba(212,175,55,0.4)] transition-all cursor-pointer inline-block text-center">
+        <a href="#reservation" class="px-5 py-2.5 rounded-full bg-gradient-to-r from-[#D4AF37] to-[#997D25] text-black font-extrabold text-xs tracking-wider uppercase hover:shadow-[0_0_20px_rgba(212,175,55,0.4)] transition-all cursor-pointer inline-block text-center whitespace-nowrap">
           관심고객 등록
         </a>
       </div>
 
-      <button id="mobileMenuBtn" class="lg:hidden text-2xl text-[#D4AF37] focus:outline-none">
+      <button id="mobileMenuBtn" class="xl:hidden text-2xl text-[#D4AF37] focus:outline-none">
         <i class="fa-solid fa-bars"></i>
       </button>
     </div>
 
     <!-- 모바일 드롭다운 네비게이션 -->
-    <div id="mobileMenu" class="hidden lg:hidden bg-[#0C0F17] border-b border-[#2A241A] px-6 py-6 space-y-4">
+    <div id="mobileMenu" class="hidden xl:hidden bg-[#0C0F17] border-b border-[#2A241A] px-6 py-6 space-y-4">
       <a href="#brand" class="block text-gray-300 hover:text-[#D4AF37]" onclick="toggleMobileMenu()">브랜드 스토리</a>
       <a href="#summary" class="block text-gray-300 hover:text-[#D4AF37]" onclick="toggleMobileMenu()">사업개요</a>
       <a href="#location" class="block text-gray-300 hover:text-[#D4AF37]" onclick="toggleMobileMenu()">입지환경</a>
@@ -136,14 +184,14 @@
         <div class="absolute inset-0 bg-gradient-to-t from-[#07090D] via-[#07090D]/50 to-transparent"></div>
         <div class="absolute bottom-6 sm:bottom-12 left-6 sm:left-10 right-6 max-w-2xl">
           <span class="inline-block px-3 py-1 bg-[#D4AF37]/20 border border-[#D4AF37]/50 text-[#F3E5AB] text-xs sm:text-sm font-semibold rounded-full mb-3 backdrop-blur-sm">
-            울산 트램 1호선 공업탑로터리역 도보 1분 초역세권[cite: 111, 127]
+            울산 트램 1호선 공업탑로터리역 도보 1분 초역세권
           </span>
           <h1 class="text-2xl sm:text-4xl lg:text-5xl font-black leading-tight mb-3">
-            도시의 중심에서 울산의 모든 가치[cite: 73, 74]<br>
+            도시의 중심에서 울산의 모든 가치<br>
             <span class="gold-gradient-text">MUNSURO LATIÈRE 673</span>
           </h1>
           <p class="text-gray-300 text-xs sm:text-sm lg:text-base mb-6 line-clamp-2">
-            울산 신정동 673번지, 신정동 리치벨트(U.L.T)를 완성하는 234세대 하이엔드 랜드마크[cite: 74, 75, 106].
+            울산 신정동 673번지, 신정동 리치벨트(U.L.T)를 완성하는 234세대 하이엔드 랜드마크.
           </p>
           <div class="flex flex-wrap gap-3">
             <a href="#reservation" class="px-6 py-3 bg-gradient-to-r from-[#D4AF37] to-[#997D25] text-black font-bold text-xs sm:text-sm rounded-lg hover:brightness-110 transition-all flex items-center cursor-pointer">
@@ -166,7 +214,7 @@
       <div class="fade-up-element text-center max-w-3xl mx-auto mb-16">
         <p class="text-[#D4AF37] text-xs tracking-widest uppercase font-semibold mb-2">Chapter I. Brand Story</p>
         <h2 class="text-3xl sm:text-4xl font-extrabold gold-gradient-text">주소를 넘어 상징이 되는 브랜드</h2>
-        <p class="text-gray-400 mt-3 text-sm">도시는 중심을 기억합니다. 그 중심은 결코 쉽게 바뀌지 않습니다[cite: 74].</p>
+        <p class="text-gray-400 mt-3 text-sm">도시는 중심을 기억합니다. 그 중심은 결코 쉽게 바뀌지 않습니다.</p>
       </div>
 
       <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
@@ -176,7 +224,7 @@
           </div>
           <h4 class="text-lg font-bold text-white mb-2">LATIÈRE (라티에르)</h4>
           <p class="text-xs text-gray-400 leading-relaxed">
-            <strong>Land(대지의 견고함과 신뢰)</strong>와 <strong>Lumière(빛의 가치와 품격)</strong>의 결합으로 최상의 예술적 감성과 고급스러움을 표현합니다[cite: 74].
+            <strong>Land(대지의 견고함과 신뢰)</strong>와 <strong>Lumière(빛의 가치와 품격)</strong>의 결합으로 최상의 예술적 감성과 고급스러움을 표현합니다.
           </p>
         </div>
 
@@ -186,7 +234,7 @@
           </div>
           <h4 class="text-lg font-bold text-white mb-2">숫자 "673"의 상징</h4>
           <p class="text-xs text-gray-400 leading-relaxed">
-            울산 신정동 673번지라는 토지 정보 그대로를 네이밍에 적용하여, 지역 랜드마크의 중심성과 희소가치를 확고히 합니다[cite: 74].
+            울산 신정동 673번지라는 토지 정보 그대로를 네이밍에 적용하여, 지역 랜드마크의 중심성과 희소가치를 확고히 합니다.
           </p>
         </div>
 
@@ -196,7 +244,7 @@
           </div>
           <h4 class="text-lg font-bold text-white mb-2">울산의 첫 트램 초역세권</h4>
           <p class="text-xs text-gray-400 leading-relaxed">
-            울산 남구 공업탑 로터리, 울산 첫 번째 수소트램 1호선 정거장 도보 1분 거리에 위치하여 미래 교통의 상징으로 자리합니다[cite: 74, 111].
+            울산 남구 공업탑 로터리, 울산 첫 번째 수소트램 1호선 정거장 도보 1분 거리에 위치하여 미래 교통의 상징으로 자리합니다.
           </p>
         </div>
       </div>
@@ -226,36 +274,36 @@
           <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
             <div class="bg-[#121622] p-5 rounded-lg border border-[#2A241A]">
               <span class="text-xs text-gray-400 block mb-1">사업명</span>
-              <p class="text-base font-bold text-white">문수로 라티에르 673[cite: 74, 75]</p>
+              <p class="text-base font-bold text-white">문수로 라티에르 673</p>
             </div>
             <div class="bg-[#121622] p-5 rounded-lg border border-[#2A241A]">
               <span class="text-xs text-gray-400 block mb-1">대지위치</span>
-              <p class="text-sm font-bold text-white">울산광역시 남구 신정동 673-1번지 일원[cite: 75]</p>
+              <p class="text-sm font-bold text-white">울산광역시 남구 신정동 673-1번지 일원</p>
             </div>
             <div class="bg-[#121622] p-5 rounded-lg border border-[#2A241A]">
               <span class="text-xs text-gray-400 block mb-1">공급규모</span>
-              <p class="text-sm font-bold text-[#D4AF37]">지하 6층 ~ 지상 35층, 2개동 총 234세대[cite: 75]</p>
+              <p class="text-sm font-bold text-[#D4AF37]">지하 6층 ~ 지상 35층, 2개동 총 234세대</p>
             </div>
             <div class="bg-[#121622] p-5 rounded-lg border border-[#2A241A]">
               <span class="text-xs text-gray-400 block mb-1">세대 구성</span>
-              <p class="text-sm font-bold text-white">아파트 199세대 / 오피스텔 35실 / 상가 11실[cite: 75]</p>
+              <p class="text-sm font-bold text-white">아파트 199세대 / 오피스텔 35실 / 상가 11실</p>
             </div>
             <div class="bg-[#121622] p-5 rounded-lg border border-[#2A241A]">
               <span class="text-xs text-gray-400 block mb-1">대지 / 연면적</span>
-              <p class="text-sm font-bold text-white">3,979.00㎡ (1,203.65평) / 49,987.12㎡[cite: 75]</p>
+              <p class="text-sm font-bold text-white">3,979.00㎡ (1,203.65평) / 49,987.12㎡</p>
             </div>
             <div class="bg-[#121622] p-5 rounded-lg border border-[#2A241A]">
               <span class="text-xs text-gray-400 block mb-1">건폐율 / 용적률</span>
-              <p class="text-base font-bold text-white">48.23% / 789.43%[cite: 75]</p>
+              <p class="text-base font-bold text-white">48.23% / 789.43%</p>
             </div>
             <div class="bg-[#121622] p-5 rounded-lg border border-[#2A241A] sm:col-span-2">
               <div class="flex flex-col sm:flex-row justify-between sm:items-center gap-2">
                 <div>
-                  <span class="text-xs text-gray-400 block mb-1">주차대수 (100% 지하주차)[cite: 75, 80]</span>
-                  <p class="text-sm font-bold text-white">총 375대 <span class="text-[#D4AF37]">(아파트 1.51:1 / 오피스텔 1.86:1)[cite: 75, 81]</span></p>
+                  <span class="text-xs text-gray-400 block mb-1">주차대수 (100% 지하주차)</span>
+                  <p class="text-sm font-bold text-white">총 375대 <span class="text-[#D4AF37]">(아파트 1.51:1 / 오피스텔 1.86:1)</span></p>
                 </div>
                 <span class="px-3 py-1 bg-[#D4AF37]/10 text-[#F3E5AB] text-xs rounded border border-[#D4AF37]/30 text-center">
-                  확장형 주차공간 약 45.7% 반영[cite: 81, 132]
+                  확장형 주차공간 약 45.7% 반영
                 </span>
               </div>
             </div>
@@ -271,7 +319,7 @@
       <div class="fade-up-element text-center max-w-3xl mx-auto mb-16">
         <p class="text-[#D4AF37] text-xs tracking-widest uppercase font-semibold mb-2">Chapter V. Location Analysis</p>
         <h2 class="text-3xl sm:text-4xl font-extrabold gold-gradient-text">역세권 · 학세권 · 숲세권 · 몰세권</h2>
-        <p class="text-gray-400 mt-2 text-sm">울산 남구 옥동과 신정동의 인프라를 한 걸음에 누리는 쿼드러플 프리미엄[cite: 105]</p>
+        <p class="text-gray-400 mt-2 text-sm">울산 남구 옥동과 신정동의 인프라를 한 걸음에 누리는 쿼드러플 프리미엄</p>
       </div>
 
       <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-12">
@@ -279,7 +327,7 @@
           <div class="w-full aspect-[4/3] rounded-xl overflow-hidden border border-[#2A241A] relative group shadow-xl bg-[#121622]">
             <img src="images/3.jpg" alt="문수로 라티에르 673 광역 입지 항공 조감도" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
             <div class="absolute bottom-4 left-4 bg-[#07090D]/80 px-3 py-1.5 rounded border border-[#2A241A] text-xs text-[#D4AF37]">
-              광역 입지 환경 및 항공 조감도[cite: 105]
+              광역 입지 환경 및 항공 조감도
             </div>
           </div>
           <p class="text-[11px] text-gray-500 mt-2">※ 해당 이미지는 소비자의 이해를 돕기 위해 생성형 이미지 ai를 통해 제작되었으니 실제와 다를 수 있습니다.</p>
@@ -289,7 +337,7 @@
           <div class="w-full aspect-[4/3] rounded-xl overflow-hidden border border-[#2A241A] relative group shadow-xl bg-[#121622]">
             <img src="images/4.jpg" alt="울산 트램 1호선 공업탑로터리역 초역세권" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
             <div class="absolute bottom-4 left-4 bg-[#07090D]/80 px-3 py-1.5 rounded border border-[#2A241A] text-xs text-[#D4AF37]">
-              트램 1호선 공업탑로터리역 (도보 1분)[cite: 111]
+              트램 1호선 공업탑로터리역 (도보 1분)
             </div>
           </div>
           <p class="text-[11px] text-gray-500 mt-2">※ 해당 이미지는 소비자의 이해를 돕기 위해 생성형 이미지 ai를 통해 제작되었으니 실제와 다를 수 있습니다.</p>
@@ -301,25 +349,25 @@
           <h4 class="text-[#D4AF37] font-bold text-base flex items-center mb-2">
             <i class="fa-solid fa-train-subway mr-2.5"></i> 트램 1호선 초역세권
           </h4>
-          <p class="text-sm text-gray-300">트램 1호선 공업탑로터리역 도보 1분(약 70m)[cite: 76, 111]. 태화강역 12분, 신복로터리 16분, KTX울산역 30분대 쾌속 연결[cite: 111].</p>
+          <p class="text-sm text-gray-300">트램 1호선 공업탑로터리역 도보 1분(약 70m). 태화강역 12분, 신복로터리 16분, KTX울산역 30분대 쾌속 연결.</p>
         </div>
         <div class="fade-up-element bg-[#121622] p-5 rounded-lg border border-[#2A241A]">
           <h4 class="text-[#D4AF37] font-bold text-base flex items-center mb-2">
             <i class="fa-solid fa-graduation-cap mr-2.5"></i> 울산 1위 명품 학세권
           </h4>
-          <p class="text-sm text-gray-300">월평초 도보 400m 안심 통학[cite: 105], 학성고·울산여고 명문 학군과 200여 개 옥동 학원가 트램 4분대 이동[cite: 112, 127].</p>
+          <p class="text-sm text-gray-300">월평초 도보 400m 안심 통학, 학성고·울산여고 명문 학군과 200여 개 옥동 학원가 트램 4분대 이동.</p>
         </div>
         <div class="fade-up-element bg-[#121622] p-5 rounded-lg border border-[#2A241A]">
           <h4 class="text-[#D4AF37] font-bold text-base flex items-center mb-2">
             <i class="fa-solid fa-tree mr-2.5"></i> 울산대공원 숲세권
           </h4>
-          <p class="text-sm text-gray-300">울산대공원 도보 약 10분(약 450m), 남산근린공원, 태화강국가정원을 누리는 힐링 인프라[cite: 113, 127].</p>
+          <p class="text-sm text-gray-300">울산대공원 도보 약 10분(약 450m), 남산근린공원, 태화강국가정원을 누리는 힐링 인프라.</p>
         </div>
         <div class="fade-up-element bg-[#121622] p-5 rounded-lg border border-[#2A241A]">
           <h4 class="text-[#D4AF37] font-bold text-base flex items-center mb-2">
             <i class="fa-solid fa-bag-shopping mr-2.5"></i> 원스톱 중심 생활권
           </h4>
-          <p class="text-sm text-gray-300">롯데마트(트램 2분), 현대/롯데백화점(트램 8분), 울산시청, 병원, 은행, 공리단길 카페거리 인접[cite: 105, 113, 114].</p>
+          <p class="text-sm text-gray-300">롯데마트(트램 2분), 현대/롯데백화점(트램 8분), 울산시청, 병원, 은행, 공리단길 카페거리 인접.</p>
         </div>
       </div>
     </div>
@@ -331,7 +379,7 @@
       <div class="fade-up-element text-center max-w-3xl mx-auto mb-16">
         <p class="text-[#D4AF37] text-xs tracking-widest uppercase font-semibold mb-2">Chapter II & III. Special Design</p>
         <h2 class="text-3xl sm:text-4xl font-extrabold gold-gradient-text">21.2m 높은 4층, 97% 조망권 확보</h2>
-        <p class="text-gray-400 mt-2 text-sm">개방감을 극대화한 하이엔드 랜드마크 설계로 주거 만족도를 한 차원 높입니다[cite: 76].</p>
+        <p class="text-gray-400 mt-2 text-sm">개방감을 극대화한 하이엔드 랜드마크 설계로 주거 만족도를 한 차원 높입니다.</p>
       </div>
 
       <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
@@ -342,7 +390,7 @@
             <div class="p-5 pb-2">
               <span class="text-xs text-[#D4AF37] font-bold block mb-1">FEATURE 01</span>
               <h3 class="text-lg font-bold text-white mb-2">지상 21.2m 시작 설계</h3>
-              <p class="text-xs text-gray-400">4층 바닥 높이가 일반 아파트 7~8층 높이에서 시작되어 저층 세대까지 프라이버시와 우수한 채광을 보장합니다[cite: 76].</p>
+              <p class="text-xs text-gray-400">4층 바닥 높이가 일반 아파트 7~8층 높이에서 시작되어 저층 세대까지 프라이버시와 우수한 채광을 보장합니다.</p>
             </div>
           </div>
           <div class="px-5 pb-4 pt-1">
@@ -357,7 +405,7 @@
             <div class="p-5 pb-2">
               <span class="text-xs text-[#D4AF37] font-bold block mb-1">FEATURE 02</span>
               <h3 class="text-lg font-bold text-white mb-2">난간 없는 조망형 시스템 창호</h3>
-              <p class="text-xs text-gray-400">시야를 가리는 철제 난간대 대신 입면분할 접합복층유리 시스템창을 적용하여 실내에서 파노라마 뷰를 감상합니다[cite: 85].</p>
+              <p class="text-xs text-gray-400">시야를 가리는 철제 난간대 대신 입면분할 접합복층유리 시스템창을 적용하여 실내에서 파노라마 뷰를 감상합니다.</p>
             </div>
           </div>
           <div class="px-5 pb-4 pt-1">
@@ -372,7 +420,7 @@
             <div class="p-5 pb-2">
               <span class="text-xs text-[#D4AF37] font-bold block mb-1">FEATURE 03</span>
               <h3 class="text-lg font-bold text-white mb-2">층간소음 저감 & 높은 층고</h3>
-              <p class="text-xs text-gray-400">바닥 두께 320mm(슬래브 210mm+완충재 30mm)로 소음을 줄이고, 2.42m 우물천정으로 시원한 공간감을 선사합니다[cite: 82].</p>
+              <p class="text-xs text-gray-400">바닥 두께 320mm(슬래브 210mm+완충재 30mm)로 소음을 줄이고, 2.42m 우물천정으로 시원한 공간감을 선사합니다.</p>
             </div>
           </div>
           <div class="px-5 pb-4 pt-1">
@@ -398,10 +446,10 @@
           </div>
           <h4 class="text-lg font-bold text-white mb-2">안전 보안 시스템</h4>
           <ul class="text-xs text-gray-400 space-y-1.5 leading-relaxed">
-            <li>• 10인치 스마트 월패드 (원격 제어, 망분리 보안)[cite: 84]</li>
-            <li>• 번호인식 차량통제 & 주차유도시스템[cite: 84]</li>
-            <li>• 지하주차장 비상벨 & 최하·최상층 동체감지기[cite: 84]</li>
-            <li>• 3세대 PUSH-PULL 무선 디지털 도어락[cite: 84]</li>
+            <li>• 10인치 스마트 월패드 (원격 제어, 망분리 보안)</li>
+            <li>• 번호인식 차량통제 & 주차유도시스템</li>
+            <li>• 지하주차장 비상벨 & 최하·최상층 동체감지기</li>
+            <li>• 3세대 PUSH-PULL 무선 디지털 도어락</li>
           </ul>
         </div>
 
@@ -411,10 +459,10 @@
           </div>
           <h4 class="text-lg font-bold text-white mb-2">청정 웰빙 시스템</h4>
           <ul class="text-xs text-gray-400 space-y-1.5 leading-relaxed">
-            <li>• 헤파필터 내장 센서식 전열교환 환기시스템[cite: 85]</li>
-            <li>• 엘리베이터 내부 냉방 및 공기정화 시스템[cite: 85]</li>
-            <li>• 공용 및 부부욕실 바닥난방 시공 (쾌적성 극대화)[cite: 85]</li>
-            <li>• 부스터펌프 방식 안정적 수압 공급 시스템[cite: 85]</li>
+            <li>• 헤파필터 내장 센서식 전열교환 환기시스템</li>
+            <li>• 엘리베이터 내부 냉방 및 공기정화 시스템</li>
+            <li>• 공용 및 부부욕실 바닥난방 시공 (쾌적성 극대화)</li>
+            <li>• 부스터펌프 방식 안정적 수압 공급 시스템</li>
           </ul>
         </div>
 
@@ -424,10 +472,10 @@
           </div>
           <h4 class="text-lg font-bold text-white mb-2">에너지 절감 시스템</h4>
           <ul class="text-xs text-gray-400 space-y-1.5 leading-relaxed">
-            <li>• 옥상 태양광 발전 시스템 (공용 관리비 절감)[cite: 85]</li>
-            <li>• 전 세대 및 공용부 고효율 LED 조명 적용[cite: 85]</li>
-            <li>• 현관 일괄소등스위치 & 대기전력 자동 차단[cite: 85]</li>
-            <li>• 각 방별 디지털 실별 온도조절 시스템[cite: 85]</li>
+            <li>• 옥상 태양광 발전 시스템 (공용 관리비 절감)</li>
+            <li>• 전 세대 및 공용부 고효율 LED 조명 적용</li>
+            <li>• 현관 일괄소등스위치 & 대기전력 자동 차단</li>
+            <li>• 각 방별 디지털 실별 온도조절 시스템</li>
           </ul>
         </div>
       </div>
@@ -445,16 +493,16 @@
       <!-- 탭 버튼 -->
       <div class="fade-up-element flex flex-wrap justify-center gap-2 sm:gap-4 mb-12">
         <button onclick="switchTab('plan84a')" id="tab-plan84a" class="comm-tab px-5 py-2.5 rounded-full text-xs sm:text-sm font-bold border border-[#D4AF37] bg-[#D4AF37] text-black transition-all cursor-pointer">
-          84A 타워형 (60세대)[cite: 75]
+          84A 타워형 (60세대)
         </button>
         <button onclick="switchTab('plan84b')" id="tab-plan84b" class="comm-tab px-5 py-2.5 rounded-full text-xs sm:text-sm font-bold border border-[#2A241A] bg-[#121622] text-gray-300 transition-all cursor-pointer">
-          84B / 110OT (50세대)[cite: 75]
+          84B / 110OT (50세대)
         </button>
         <button onclick="switchTab('plan84c')" id="tab-plan84c" class="comm-tab px-5 py-2.5 rounded-full text-xs sm:text-sm font-bold border border-[#2A241A] bg-[#121622] text-gray-300 transition-all cursor-pointer">
-          84C 판상형 (62세대)[cite: 75]
+          84C 판상형 (62세대)
         </button>
         <button onclick="switchTab('plan104')" id="tab-plan104" class="comm-tab px-5 py-2.5 rounded-full text-xs sm:text-sm font-bold border border-[#2A241A] bg-[#121622] text-gray-300 transition-all cursor-pointer">
-          104㎡ 대형 (62세대)[cite: 75]
+          104㎡ 대형 (62세대)
         </button>
       </div>
 
@@ -465,15 +513,15 @@
           <p class="text-[10px] text-gray-500 mt-2 text-right">※ 해당 이미지는 소비자의 이해를 돕기 위해 생성형 이미지 ai를 통해 제작되었으니 실제와 다를 수 있습니다.</p>
         </div>
         <div class="lg:col-span-5 space-y-4">
-          <span class="text-xs text-[#D4AF37] font-bold block">84㎡A 타입 (총 60세대)[cite: 75]</span>
-          <h3 class="text-2xl font-black text-white">독립적인 감각의 LDK 타워형 구조[cite: 87, 88]</h3>
+          <span class="text-xs text-[#D4AF37] font-bold block">84㎡A 타입 (총 60세대)</span>
+          <h3 class="text-2xl font-black text-white">독립적인 감각의 LDK 타워형 구조</h3>
           <p class="text-sm text-gray-400 leading-relaxed">
-            거실과 주방의 개방감을 극대화한 타워형 설계. 현관 대형 펜트리와 복도 펜트리로 수납 효율을 극대화하였으며 안방 와이드 드레스룸이 마련되어 있습니다[cite: 87, 88].
+            거실과 주방의 개방감을 극대화한 타워형 설계. 현관 대형 펜트리와 복도 펜트리로 수납 효율을 극대화하였으며 안방 와이드 드레스룸이 마련되어 있습니다.
           </p>
           <div class="bg-[#0C0F17] p-4 rounded-lg border border-[#2A241A] text-xs space-y-1.5 text-gray-300">
-            <p>• 전용면적: 84.94㎡ / 공급면적: 115.11㎡ (34.82평)[cite: 75]</p>
-            <p>• 공간특화: 현관 펜트리, 복도 펜트리, 파우더&드레스룸[cite: 87, 88]</p>
-            <p>• 주방특화: ㄱ자형 주방가구 + 단독 아일랜드장 배치[cite: 87, 88]</p>
+            <p>• 전용면적: 84.94㎡ / 공급면적: 115.11㎡ (34.82평)</p>
+            <p>• 공간특화: 현관 펜트리, 복도 펜트리, 파우더&드레스룸</p>
+            <p>• 주방특화: ㄱ자형 주방가구 + 단독 아일랜드장 배치</p>
           </div>
         </div>
       </div>
@@ -485,15 +533,15 @@
           <p class="text-[10px] text-gray-500 mt-2 text-right">※ 해당 이미지는 소비자의 이해를 돕기 위해 생성형 이미지 ai를 통해 제작되었으니 실제와 다를 수 있습니다.</p>
         </div>
         <div class="lg:col-span-5 space-y-4">
-          <span class="text-xs text-[#D4AF37] font-bold block">84㎡B (15세대) & 오피스텔 110㎡ (35실)[cite: 75]</span>
-          <h3 class="text-2xl font-black text-white">채광과 통풍이 우수한 4BAY 판상형[cite: 91, 93]</h3>
+          <span class="text-xs text-[#D4AF37] font-bold block">84㎡B (15세대) & 오피스텔 110㎡ (35실)</span>
+          <h3 class="text-2xl font-black text-white">채광과 통풍이 우수한 4BAY 판상형</h3>
           <p class="text-sm text-gray-400 leading-relaxed">
-            전면 4BAY 판상형 구조로 맞통풍과 풍부한 일조권을 자랑합니다[cite: 91]. 주부 동선을 고려한 ㄷ자형 주방 배치와 침실1,2 가변형 구조로 활용도가 높습니다[cite: 91, 92, 93].
+            전면 4BAY 판상형 구조로 맞통풍과 풍부한 일조권을 자랑합니다. 주부 동선을 고려한 ㄷ자형 주방 배치와 침실1,2 가변형 구조로 활용도가 높습니다.
           </p>
           <div class="bg-[#0C0F17] p-4 rounded-lg border border-[#2A241A] text-xs space-y-1.5 text-gray-300">
-            <p>• 전용면적: 84.88㎡ / 공급면적: 112.63㎡ (34.07평)[cite: 75]</p>
-            <p>• 공간특화: 4BAY 맞통풍 판상형, 신발장1,2 수납 강화[cite: 91, 93]</p>
-            <p>• 오피스텔(110㎡): 아파트 84B타입 구조 동일 적용 특화[cite: 75]</p>
+            <p>• 전용면적: 84.88㎡ / 공급면적: 112.63㎡ (34.07평)</p>
+            <p>• 공간특화: 4BAY 맞통풍 판상형, 신발장1,2 수납 강화</p>
+            <p>• 오피스텔(110㎡): 아파트 84B타입 구조 동일 적용 특화</p>
           </div>
         </div>
       </div>
@@ -505,15 +553,15 @@
           <p class="text-[10px] text-gray-500 mt-2 text-right">※ 해당 이미지는 소비자의 이해를 돕기 위해 생성형 이미지 ai를 통해 제작되었으니 실제와 다를 수 있습니다.</p>
         </div>
         <div class="lg:col-span-5 space-y-4">
-          <span class="text-xs text-[#D4AF37] font-bold block">84㎡C 타입 (총 62세대)[cite: 75]</span>
-          <h3 class="text-2xl font-black text-white">대면형 주방 특화가 가능한 3BAY 판상형[cite: 95, 97]</h3>
+          <span class="text-xs text-[#D4AF37] font-bold block">84㎡C 타입 (총 62세대)</span>
+          <h3 class="text-2xl font-black text-white">대면형 주방 특화가 가능한 3BAY 판상형</h3>
           <p class="text-sm text-gray-400 leading-relaxed">
-            실속 있는 3BAY 판상형 평면으로 거실과 주방 간 통풍이 우수합니다[cite: 95]. 대면형 주방 및 주방 장식장/펜트리 옵션 선택 시 고급 다이닝 공간으로 변모합니다[cite: 95, 96, 97].
+            실속 있는 3BAY 판상형 평면으로 거실과 주방 간 통풍이 우수합니다. 대면형 주방 및 주방 장식장/펜트리 옵션 선택 시 고급 다이닝 공간으로 변모합니다.
           </p>
           <div class="bg-[#0C0F17] p-4 rounded-lg border border-[#2A241A] text-xs space-y-1.5 text-gray-300">
-            <p>• 전용면적: 84.89㎡ / 공급면적: 114.81㎡ (34.73평)[cite: 75]</p>
-            <p>• 공간특화: ㄷ자형 주방, 대면형 주방 선택 옵션[cite: 95, 97]</p>
-            <p>• 수납특화: 현관 창고, 복도 장식장 및 워크인 드레스룸[cite: 95, 96, 97]</p>
+            <p>• 전용면적: 84.89㎡ / 공급면적: 114.81㎡ (34.73평)</p>
+            <p>• 공간특화: ㄷ자형 주방, 대면형 주방 선택 옵션</p>
+            <p>• 수납특화: 현관 창고, 복도 장식장 및 워크인 드레스룸</p>
           </div>
         </div>
       </div>
@@ -525,15 +573,15 @@
           <p class="text-[10px] text-gray-500 mt-2 text-right">※ 해당 이미지는 소비자의 이해를 돕기 위해 생성형 이미지 ai를 통해 제작되었으니 실제와 다를 수 있습니다.</p>
         </div>
         <div class="lg:col-span-5 space-y-4">
-          <span class="text-xs text-[#D4AF37] font-bold block">104㎡ 타입 (총 62세대) - 43평형[cite: 75]</span>
-          <h3 class="text-2xl font-black text-white">신정동 13년 만의 희소 가치 40평형대[cite: 75]</h3>
+          <span class="text-xs text-[#D4AF37] font-bold block">104㎡ 타입 (총 62세대) - 43평형</span>
+          <h3 class="text-2xl font-black text-white">신정동 13년 만의 희소 가치 40평형대</h3>
           <p class="text-sm text-gray-400 leading-relaxed">
-            신정동 일대에 극히 드문 희소 대형 평형[cite: 75]. 4BAY 와이드 판상형에 멀티룸 공간과 듀얼 드레스룸 특화가 가능하여 최고급 주거 품격을 완성합니다[cite: 99, 102].
+            신정동 일대에 극히 드문 희소 대형 평형. 4BAY 와이드 판상형에 멀티룸 공간과 듀얼 드레스룸 특화가 가능하여 최고급 주거 품격을 완성합니다.
           </p>
           <div class="bg-[#0C0F17] p-4 rounded-lg border border-[#2A241A] text-xs space-y-1.5 text-gray-300">
-            <p>• 전용면적: 104.90㎡ / 공급면적: 142.25㎡ (43.03평)[cite: 75]</p>
-            <p>• 공간특화: 4BAY 판상형 + 멀티룸 + 주방 대형 아일랜드[cite: 99, 100, 102]</p>
-            <p>• 수납특화: 대형 현관펜트리, 듀얼 드레스룸(드레스룸 1,2)[cite: 99, 100, 102]</p>
+            <p>• 전용면적: 104.90㎡ / 공급면적: 142.25㎡ (43.03평)</p>
+            <p>• 공간특화: 4BAY 판상형 + 멀티룸 + 주방 대형 아일랜드</p>
+            <p>• 수납특화: 대형 현관펜트리, 듀얼 드레스룸(드레스룸 1,2)</p>
           </div>
         </div>
       </div>
@@ -545,7 +593,7 @@
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
       <div class="fade-up-element text-center max-w-3xl mx-auto mb-16">
         <p class="text-[#D4AF37] text-xs tracking-widest uppercase font-semibold mb-2">Chapter VII. M7 Premium</p>
-        <h2 class="text-3xl sm:text-4xl font-extrabold gold-gradient-text">문수로 라티에르 673의 7대 프리미엄[cite: 74, 127]</h2>
+        <h2 class="text-3xl sm:text-4xl font-extrabold gold-gradient-text">문수로 라티에르 673의 7대 프리미엄</h2>
       </div>
 
       <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
@@ -556,7 +604,7 @@
             <div class="p-6 pb-2">
               <span class="text-xs font-bold text-[#D4AF37] mb-1 block">PREMIUM 01</span>
               <h3 class="text-xl font-bold text-white mb-2">사통팔달 교통특권</h3>
-              <p class="text-xs text-gray-400">울산 트램 1호선 공업탑로터리역(2029년 개통 목표) 도보 1분 초역세권, 삼산로·문수로·봉월로 교통의 요지[cite: 111, 127].</p>
+              <p class="text-xs text-gray-400">울산 트램 1호선 공업탑로터리역(2029년 개통 목표) 도보 1분 초역세권, 삼산로·문수로·봉월로 교통의 요지.</p>
             </div>
           </div>
           <div class="px-6 pb-4 pt-1">
@@ -571,7 +619,7 @@
             <div class="p-6 pb-2">
               <span class="text-xs font-bold text-[#D4AF37] mb-1 block">PREMIUM 02</span>
               <h3 class="text-xl font-bold text-white mb-2">울산 1위 명문 학세권</h3>
-              <p class="text-xs text-gray-400">월평초 안심 도보 통학, 학성고·울산여고 등 명문 학군 및 옥동 학원가 트램 4~6분 이동권[cite: 105, 112, 127].</p>
+              <p class="text-xs text-gray-400">월평초 안심 도보 통학, 학성고·울산여고 등 명문 학군 및 옥동 학원가 트램 4~6분 이동권.</p>
             </div>
           </div>
           <div class="px-6 pb-4 pt-1">
@@ -586,7 +634,7 @@
             <div class="p-6 pb-2">
               <span class="text-xs font-bold text-[#D4AF37] mb-1 block">PREMIUM 03</span>
               <h3 class="text-xl font-bold text-white mb-2">울산대공원 청정 숲세권</h3>
-              <p class="text-xs text-gray-400">울산대공원 도보 약 10분(약 450m), 남산근린공원, 태화강국가정원의 힐링 라이프[cite: 113, 127].</p>
+              <p class="text-xs text-gray-400">울산대공원 도보 약 10분(약 450m), 남산근린공원, 태화강국가정원의 힐링 라이프.</p>
             </div>
           </div>
           <div class="px-6 pb-4 pt-1">
@@ -601,7 +649,7 @@
             <div class="p-6 pb-2">
               <span class="text-xs font-bold text-[#D4AF37] mb-1 block">PREMIUM 04</span>
               <h3 class="text-xl font-bold text-white mb-2">One-Stop 생활인프라</h3>
-              <p class="text-xs text-gray-400">롯데마트 트램 2분, 현대·롯데백화점 트램 8분, 시청, 병원, 은행 밀집 중심 상권[cite: 113, 114, 127].</p>
+              <p class="text-xs text-gray-400">롯데마트 트램 2분, 현대·롯데백화점 트램 8분, 시청, 병원, 은행 밀집 중심 상권.</p>
             </div>
           </div>
           <div class="px-6 pb-4 pt-1">
@@ -616,7 +664,7 @@
             <div class="p-6 pb-2">
               <span class="text-xs font-bold text-[#D4AF37] mb-1 block">PREMIUM 05</span>
               <h3 class="text-xl font-bold text-white mb-2">남구 미래비전의 중심</h3>
-              <p class="text-xs text-gray-400">부울경 광역철도, 태화강역 KTX 정차 추진, 2차전지 특화단지 및 샤힌 프로젝트 수혜[cite: 111, 115, 127, 137].</p>
+              <p class="text-xs text-gray-400">부울경 광역철도, 태화강역 KTX 정차 추진, 2차전지 특화단지 및 샤힌 프로젝트 수혜.</p>
             </div>
           </div>
           <div class="px-6 pb-4 pt-1">
@@ -631,7 +679,7 @@
             <div class="p-6 pb-2">
               <span class="text-xs font-bold text-[#D4AF37] mb-1 block">PREMIUM 06</span>
               <h3 class="text-xl font-bold text-white mb-2">고품격 단지 특화설계</h3>
-              <p class="text-xs text-gray-400">세대당 1.51대 넉넉한 100% 지하주차, 21.2m 높은 4층, 조망형 유리창호 및 97% 조망권[cite: 76, 80, 81, 85, 127].</p>
+              <p class="text-xs text-gray-400">세대당 1.51대 넉넉한 100% 지하주차, 21.2m 높은 4층, 조망형 유리창호 및 97% 조망권.</p>
             </div>
           </div>
           <div class="px-6 pb-4 pt-1">
@@ -642,12 +690,12 @@
 
       <!-- P7 금융 솔루션 배너 -->
       <div class="mt-8 fade-up-element bg-gradient-to-r from-[#121622] via-[#1A2234] to-[#121622] p-8 rounded-2xl border-2 border-[#D4AF37]/60 text-center shadow-xl">
-        <span class="text-xs font-bold text-[#D4AF37] mb-1 block uppercase tracking-wider">PREMIUM 07. Smart Financial Solution</span>
+        <span class="text-xs font-bold text-[#D4AF37] mb-1 block uppercase tracking-wider font-brand-en">PREMIUM 07. Smart Financial Solution</span>
         <h3 class="text-2xl sm:text-3xl font-black text-white gold-gradient-text mb-3">
-          계약금 5% (1차 500만원 정액제) & 중도금 60%[cite: 122, 127]
+          계약금 5% (1차 500만원 정액제) & 중도금 60%
         </h3>
         <p class="text-sm text-gray-300 max-w-2xl mx-auto">
-          초기 자금 부담을 획기적으로 낮춘 특별 금융 혜택으로 울산 신정동 중심 랜드마크의 주인이 되실 수 있습니다[cite: 74, 127].
+          초기 자금 부담을 획기적으로 낮춘 특별 금융 혜택으로 울산 신정동 중심 랜드마크의 주인이 되실 수 있습니다.
         </p>
       </div>
     </div>
@@ -679,8 +727,8 @@
             <div class="bg-[#0C0F17] p-6 rounded-xl border border-[#2A241A]">
               <span class="text-xs text-[#D4AF37] font-semibold uppercase tracking-wider block mb-1">SITE</span>
               <h5 class="text-lg font-bold text-white mb-2">사업지 현장</h5>
-              <p class="text-sm text-gray-300">울산광역시 남구 신정동 673-1번지 일원[cite: 75]</p>
-              <p class="text-xs text-gray-500 mt-2">울산 트램 1호선 공업탑로터리역(예정) 바로 앞[cite: 111]</p>
+              <p class="text-sm text-gray-300">울산광역시 남구 신정동 673-1번지 일원</p>
+              <p class="text-xs text-gray-500 mt-2">울산 트램 1호선 공업탑로터리역(예정) 바로 앞</p>
             </div>
             <div class="bg-[#0C0F17] p-6 rounded-xl border border-[#D4AF37]/40">
               <span class="text-xs text-[#D4AF37] font-semibold uppercase tracking-wider block mb-1">MODEL HOUSE</span>
@@ -698,28 +746,28 @@
   <section id="reservation" class="py-20 bg-[#0C0F17] border-t border-[#2A241A]">
     <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
       
-      <!-- 청약 체크포인트 카드 (p.66 내용) -->
+      <!-- 청약 체크포인트 카드 -->
       <div class="fade-up-element bg-[#121622] p-6 rounded-xl border border-[#2A241A] mb-12">
         <div class="text-center mb-6">
           <span class="text-xs text-[#D4AF37] uppercase font-bold tracking-widest block mb-1">CHECK POINT</span>
-          <h3 class="text-xl font-bold text-white">1순위 청약 체크포인트 (비규제지역 혜택)[cite: 135, 138]</h3>
+          <h3 class="text-xl font-bold text-white">1순위 청약 체크포인트 (비규제지역 혜택)</h3>
         </div>
         <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 text-xs text-gray-300">
           <div class="bg-[#0C0F17] p-3.5 rounded border border-[#2A241A]">
-            <strong class="text-[#F3E5AB] block mb-1">✓ 만 19세 이상 누구나 청약 가능[cite: 138]</strong>
-            울산광역시, 부산광역시, 경상남도 거주자 청약 가능[cite: 138]
+            <strong class="text-[#F3E5AB] block mb-1">✓ 만 19세 이상 누구나 청약 가능</strong>
+            울산광역시, 부산광역시, 경상남도 거주자 청약 가능
           </div>
           <div class="bg-[#0C0F17] p-3.5 rounded border border-[#2A241A]">
-            <strong class="text-[#F3E5AB] block mb-1">✓ 청약통장 6개월 경과 1순위[cite: 138]</strong>
-            가입기간 6개월 + 지역별/면적별 예치금액 충족 시[cite: 138]
+            <strong class="text-[#F3E5AB] block mb-1">✓ 청약통장 6개월 경과 1순위</strong>
+            가입기간 6개월 + 지역별/면적별 예치금액 충족 시
           </div>
           <div class="bg-[#0C0F17] p-3.5 rounded border border-[#2A241A]">
-            <strong class="text-[#F3E5AB] block mb-1">✓ 유주택자도 1순위 청약 가능[cite: 138]</strong>
-            보유 주택 수에 상관없이 1순위 청약 접수 가능[cite: 138]
+            <strong class="text-[#F3E5AB] block mb-1">✓ 유주택자도 1순위 청약 가능</strong>
+            보유 주택 수에 상관없이 1순위 청약 접수 가능
           </div>
           <div class="bg-[#0C0F17] p-3.5 rounded border border-[#2A241A]">
-            <strong class="text-[#F3E5AB] block mb-1">✓ 재당첨 제한 없음[cite: 138]</strong>
-            기존 청약 당첨 사실이 있어도 청약 가능[cite: 138]
+            <strong class="text-[#F3E5AB] block mb-1">✓ 재당첨 제한 없음</strong>
+            기존 청약 당첨 사실이 있어도 청약 가능
           </div>
         </div>
       </div>
@@ -799,7 +847,7 @@
 
         <div class="p-4 bg-[#0C0F17] rounded-lg border border-[#2A241A] text-xs text-gray-400 space-y-2">
           <p class="font-bold text-gray-200">[개인정보 수집 및 이용 동의서]</p>
-          <p>1. <strong>수집 및 이용 목적</strong>: 문수로 라티에르 673 상담, 관심고객 관리 및 분양 안내 문자 발송[cite: 74]</p>
+          <p>1. <strong>수집 및 이용 목적</strong>: 문수로 라티에르 673 상담, 관심고객 관리 및 분양 안내 문자 발송</p>
           <p>2. <strong>수집 항목</strong>: 성함, 연락처, 생년월일, 관심타입, 문의 내용</p>
           <p>3. <strong>보유 및 이용 기간</strong>: 목적 달성 시 혹은 고객 요청 시 지체 없이 파기 (최대 6개월 보유)</p>
           <p>4. <strong>동의 거부 권리</strong>: 귀하는 본 동의를 거부할 권리가 있으나, 거부 시 관심고객 상담 서비스 이용이 제한될 수 있습니다.</p>
@@ -828,21 +876,21 @@
           <div>
             <span class="inline-block px-3 py-1 rounded bg-[#D4AF37]/20 text-[#F3E5AB] font-bold text-xs mb-2">분양상담 공식 지정 안내</span>
             <h3 class="text-2xl sm:text-3xl font-black text-white gold-gradient-text tracking-wide">
-              문수로 라티에르 673 분양홍보관[cite: 74]
+              문수로 라티에르 673 분양홍보관
             </h3>
             <p class="text-xs text-gray-400 mt-1 flex items-center">
-              <i class="fa-solid fa-location-dot text-[#D4AF37] mr-1.5"></i> 현장: 울산광역시 남구 신정동 673-1번지 일원[cite: 75]
+              <i class="fa-solid fa-location-dot text-[#D4AF37] mr-1.5"></i> 현장: 울산광역시 남구 신정동 673-1번지 일원
             </p>
           </div>
 
           <div class="flex flex-col sm:flex-row items-start sm:items-center gap-3">
             <div class="text-left sm:text-right">
               <span class="text-xs font-semibold text-gray-400 block">고객문의 및 VIP 직통</span>
-              <a href="tel:010-5031-0330" class="text-3xl sm:text-4xl font-black text-[#D4AF37] hover:text-[#F3E5AB] transition-colors flex items-center">
+              <a href="tel:010-5031-0330" class="text-3xl sm:text-4xl font-black text-[#D4AF37] hover:text-[#F3E5AB] transition-colors flex items-center font-brand-en">
                 <i class="fa-solid fa-phone text-2xl mr-2 text-[#D4AF37]"></i> 010-5031-0330
               </a>
             </div>
-            <a href="tel:010-5031-0330" class="px-5 py-3 rounded-xl bg-gradient-to-r from-[#D4AF37] to-[#997D25] text-black font-extrabold text-xs uppercase hover:brightness-110 shadow-md">
+            <a href="tel:010-5031-0330" class="px-5 py-3 rounded-xl bg-gradient-to-r from-[#D4AF37] to-[#997D25] text-black font-extrabold text-xs uppercase hover:brightness-110 shadow-md whitespace-nowrap">
               전화연결
             </a>
           </div>
@@ -852,11 +900,11 @@
         <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-4 pt-6 text-xs sm:text-sm">
           <div class="bg-[#0C0F17] p-3.5 rounded-lg border border-[#2A241A]">
             <span class="text-gray-400 block text-xs mb-0.5">시행사</span>
-            <span class="text-white font-bold">한국토지신탁[cite: 73]</span>
+            <span class="text-white font-bold">한국토지신탁</span>
           </div>
           <div class="bg-[#0C0F17] p-3.5 rounded-lg border border-[#2A241A]">
             <span class="text-gray-400 block text-xs mb-0.5">시공사</span>
-            <span class="text-white font-bold">금강종합건설(주)[cite: 73]</span>
+            <span class="text-white font-bold">금강종합건설(주)</span>
           </div>
           <div class="bg-[#0C0F17] p-3.5 rounded-lg border border-[#2A241A]">
             <span class="text-gray-400 block text-xs mb-0.5">사이트 관리자</span>
@@ -864,18 +912,18 @@
           </div>
           <div class="bg-[#0C0F17] p-3.5 rounded-lg border border-[#2A241A]">
             <span class="text-gray-400 block text-xs mb-0.5">대표 이메일</span>
-            <span class="text-white font-medium">jku058@naver.com</span>
+            <span class="text-white font-medium">jku720528@gmail.com</span>
           </div>
           <div class="bg-[#0C0F17] p-3.5 rounded-lg border border-[#2A241A]">
             <span class="text-gray-400 block text-xs mb-0.5">문의 전화</span>
-            <span class="text-[#F3E5AB] font-bold tracking-wider">010-5031-0330</span>
+            <span class="text-[#F3E5AB] font-bold tracking-wider font-brand-en">010-5031-0330</span>
           </div>
         </div>
       </div>
 
       <p class="text-[11px] text-gray-500 text-center leading-relaxed">
         ※ 본 웹사이트에 사용된 CG, 조감도, 투시도 등은 소비자의 이해를 돕기 위해 생성형 AI 이미지를 활용하였으며 실제와 다를 수 있습니다.<br>
-        © 2026 MUNSURO LATIÈRE 673. All Rights Reserved.[cite: 74]
+        © 2026 MUNSURO LATIÈRE 673. All Rights Reserved.
       </p>
     </div>
   </footer>
@@ -969,7 +1017,7 @@
       }
     }
 
-    // 스크롤 페이드업 애니메이션 등록
+    // 스크롤 감지 애니메이션
     window.addEventListener('DOMContentLoaded', () => {
       const fadeElements = document.querySelectorAll('.fade-up-element');
       const observer = new IntersectionObserver((entries) => {
